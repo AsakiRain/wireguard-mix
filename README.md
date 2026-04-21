@@ -14,6 +14,30 @@
 go build -o wireguard-mix
 ```
 
+### 跨平台编译
+
+Go 原生支持跨平台编译，通过设置 `GOOS` 和 `GOARCH` 环境变量即可。
+
+**支持的操作系统：** Windows, macOS (darwin), Linux, FreeBSD
+
+**支持的架构：** amd64, arm64, arm, 386, mips, mipsel 等
+
+**示例命令：**
+
+```bash
+# Linux amd64
+GOOS=linux GOARCH=amd64 go build -o wireguard-mix-linux-amd64
+
+# macOS arm64 (Apple Silicon)
+GOOS=darwin GOARCH=arm64 go build -o wireguard-mix-macos-arm64
+
+# FreeBSD amd64
+GOOS=freebsd GOARCH=amd64 go build -o wireguard-mix-freebsd-amd64
+
+# Linux mipsel (软路由常用)
+GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -o wireguard-mix-linux-mipsel
+```
+
 ## 用法
 
 这样子开接口：
